@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/output/} }
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage{titling}
+\usepackage{float}
+% \usepackage{amsmath}
+% \usepackage{minted}
+% \usepackage{multicol}
+% \usepackage{array}
+% \usepackage{setspace}
+% \usepackage{placeins}
+
+% \usepackage{lipsum}
+
+\title{Study of Thyristor Characteristics R, RL Load}
+\author{}
+\date{}
+
+\pagenumbering{gobble}
+\begin{document}
+\input{faysal_sir_cover.tex}
+
+\pagebreak
+
+\tableofcontents
+
+\pagebreak
+\pagenumbering{arabic}
+\maketitle
+
+\section*{Theory}
+\addcontentsline{toc}{section}{Theory}
+In this experiment, the characteristics of a thyristor (SCR) under different load conditions using both DC and AC supplies were investigated using simulation software.
+
+\subsection*{Thyristor Characteristics with DC Supply}
+With a DC supply, the thyristor exhibited forward and reverse blocking characteristics. In forward blocking mode, it blocked current until a gate pulse was applied, then conducted until the current fell below the holding current. In reverse blocking mode, it blocked current flow, allowing only a small leakage current until the breakdown voltage was reached \cite{thyristor_characteristics}.
+
+\subsubsection*{Forward Blocking Mode}
+The thyristor remained off until a gate pulse was applied.
+
+\subsubsection*{Forward Conduction Mode}
+Once triggered, the thyristor conducted current until the current fell below the holding current.
+
+\subsubsection*{Reverse Blocking Mode}
+The thyristor blocked current flow, allowing only a small leakage current until the breakdown voltage was reached.
+
+\subsection*{Thyristor Characteristics with AC Supply}
+With an AC supply, the thyristor exhibited rectification properties, converting the AC signal into a pulsating DC \cite{ac_supply}.
+
+\section*{Required Equipments/Software}
+\addcontentsline{toc}{section}{Required Equipments/Software}
+\begin{itemize}
+    \item MATLAB/Simulink
+    \item Oscilloscope
+    \item AC Voltage Source
+    \item Thyristor
+    \item Series RLC Branch
+    \item Pulse Generator
+    \item Measurement Tools
+\end{itemize}
+
+\section*{Circuit Diagrams}
+\addcontentsline{toc}{section}{Circuit Diagrams}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ckt.png}
+    \caption{Diode with Resistive Load}
+    \label{fig:dc_r_load}
+\end{figure}
+
+\section*{Observations}
+\addcontentsline{toc}{section}{Observations}
+\begin{itemize}
+    \item Observed the input, output, and pulse voltage/current graphs in the oscilloscope.
+    \item Four cases were analyzed:
+          \begin{itemize}
+              \item R Load: With gate voltage delay.
+              \item R Load: Without gate voltage delay.
+              \item RL Load: With gate voltage delay.
+              \item RL Load: Without gate voltage delay.
+          \end{itemize}
+\end{itemize}
+
+\subsubsection*{Outputs}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{r.png}
+    \caption{}
+    Oscilloscope Output for Thyristor with R Load, No Gate Voltage Delay.
+    \label{fig:rLoad}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{r_delay.png}
+    \caption{Oscilloscope Output for R Load, With Gate Voltage Delay}
+    \label{fig:rLoadDelay}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{rl.png}
+    \caption{Oscilloscope Output for RL Load, No Gate Voltage Delay}
+    \label{fig:rlLoad}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{rl_delay.png}
+    \caption{Oscilloscope Output for RL Load, With Gate Voltage Delay}
+    \label{fig:rlLoadDelay}
+\end{figure}
+
+\section*{Discussion}
+\addcontentsline{toc}{section}{Discussion}
+The experiment explores the characteristics of a thyristor under different load conditions using DC and AC supplies. The thyristor's behavior in forward bias, reverse bias, and rectification is observed using simulation software. The oscilloscope and signal generator help analyze the thyristor's response to various input signals and load conditions. The experiment enhances understanding of the thyristor's operation and its applications in electronic circuits.
+
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+The experiment investigates the characteristics of a thyristor under different load conditions using DC and AC supplies. The thyristor's behavior in forward bias, reverse bias, and rectification is observed using simulation software. The oscilloscope and signal generator help visualize the thyristor's response to various input signals and load conditions. The experiment enhances understanding of the thyristor's operation and its applications in electronic circuits.
+
+\bibliographystyle{IEEEtran}
+\renewcommand{\bibname}{References}
+\addcontentsline{toc}{section}{References}
+\bibliography{ref}
+
+\end{document}
