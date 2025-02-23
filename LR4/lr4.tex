@@ -15,7 +15,7 @@
 
 % \usepackage{lipsum}
 
-\title{Study of 3-\(\Phi\) Star Rectifier using Diode with R, RL Load}
+\title{Study of 3-\(\Phi\) Star Rectifier using Diode, \& Thyristor with R, RL Load}
 \author{}
 \date{}
 
@@ -39,7 +39,11 @@ In a three-phase star rectifier, diodes are arranged in a star configuration. Ea
 \\\\
 When a resistive load is used, the current through the load is in phase with the voltage, resulting in a purely resistive circuit. However, when an inductive-resistive load is used, the current lags behind the voltage due to the inductance, creating a more complex circuit behavior \cite{electrical_machines}.
 \\\\
-MATLAB/Simulink is a powerful tool for simulating and analyzing the performance of such rectifier circuits. By using MATLAB/Simulink, we can model the three-phase star rectifier and observe the output waveforms for different load conditions. This helps in understanding the behavior of the rectifier and optimizing its performance for various industrial applications \cite{simulink_guide}.
+Thyristors, also known as silicon-controlled rectifiers (SCRs), can be used in place of diodes in a three-phase star rectifier to provide controlled rectification. By adjusting the gate signal of the thyristors, the conduction angle can be controlled, allowing for regulation of the output voltage. This makes thyristors suitable for applications where variable DC output is required \cite{thyristor_control}.
+\\\\
+When using thyristors with a resistive load, the output voltage can be controlled by varying the gate signal, which delays the conduction angle and reduces the average output voltage. For an inductive-resistive load, the current lags behind the voltage, and the gate signal delay further affects the conduction angle and the current waveform \cite{power_electronics}.
+\\\\
+MATLAB/Simulink is a powerful tool for simulating and analyzing the performance of such rectifier circuits. By using MATLAB/Simulink, we can model the three-phase star rectifier with both diodes and thyristors and observe the output waveforms for different load conditions. This helps in understanding the behavior of the rectifier and optimizing its performance for various industrial applications \cite{simulink_guide}.
 
 
 \section*{Required Equipments/Software}
@@ -48,6 +52,7 @@ MATLAB/Simulink is a powerful tool for simulating and analyzing the performance 
     \item MATLAB/Simulink
     \item Oscilloscope
     \item AC Voltage Source
+    \item Diode
     \item Thyristor
     \item Series RLC Branch
     \item Pulse Generator
@@ -59,8 +64,15 @@ MATLAB/Simulink is a powerful tool for simulating and analyzing the performance 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{ckt.png}
-    \caption{Diode with Resistive Load}
-    \label{fig:dc_r_load}
+    \caption{3-Phase Star Rectifier with Diode}
+    \label{fig:d_load}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{ckt2.png}
+    \caption{3-Phase Star Rectifier with Thyristor}
+    \label{fig:t_load}
 \end{figure}
 
 \section*{Observations}
@@ -70,7 +82,11 @@ MATLAB/Simulink is a powerful tool for simulating and analyzing the performance 
     \item With gate voltage delay for the thyristor and R load, the output voltage shows a delayed conduction angle, reducing the average output.
     \item For the RL load, the output voltage is pulsating DC, with the current lagging due to inductance.
     \item Gate voltage delay for the thyristor with RL load results in a delayed conduction angle and a more pronounced current lag.
-    \item MATLAB/Simulink aids in analyzing and visualizing the rectifier's performance under different loads.
+    \item Thyristor with 15-degree gate delay and R load: reduced average output due to delayed conduction.
+    \item Thyristor with no gate delay and R load: output similar to diode rectifier with controlled conduction.
+    \item Thyristor with 15-degree gate delay and RL load: delayed conduction and increased current lag.
+    \item Thyristor with no gate delay and RL load: output similar to diode rectifier with controlled conduction.
+    \item MATLAB/Simulink helps analyze and visualize rectifier performance.
 \end{itemize}
 
 
@@ -78,15 +94,43 @@ MATLAB/Simulink is a powerful tool for simulating and analyzing the performance 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{r.png}
-    \caption{Simulation Output for R Load, 3 Phase Bridge Rectifier}
+    \caption{Simulation Output for R Load, 3-Phase Star Rectifier}
     \label{fig:rLoad}
 \end{figure}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=\textwidth]{rl.png}
-    \caption{Simulation Output for RL Load, 3 Phase Bridge Rectifier}
+    \caption{Simulation Output for RL Load, 3-Phase Star Rectifier}
     \label{fig:rlLoad}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{r-nd.png}
+    \caption{Simulation Output for R Load, Controlled Rectifier, No Delay}
+    \label{fig:rControlledNoDelay}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{r-d.png}
+    \caption{Simulation Output for R Load, Controlled Rectifier, With Delay}
+    \label{fig:rControlledWithDelay}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{rl-nd.png}
+    \caption{Simulation Output for RL Load, Controlled Rectifier, No Delay}
+    \label{fig:rlControlledNoDelay}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{rl-d.png}
+    \caption{Simulation Output for RL Load, Controlled Rectifier, With Delay}
+    \label{fig:rlControlledWithDelay}
 \end{figure}
 
 \section*{Discussion}
@@ -95,7 +139,7 @@ The three-phase star rectifier is a versatile circuit that can be used with diff
 
 \section*{Conclusion}
 \addcontentsline{toc}{section}{Conclusion}
-The study of the three-phase star rectifier using diodes with R and RL loads provides valuable insights into the rectifier's behavior under different load conditions. By analyzing the output waveforms using MATLAB/Simulink, we can optimize the rectifier's performance and ensure efficient power conversion in industrial applications.
+The study of the three-phase star rectifier using diodes and thyristors with R and RL loads provides valuable insights into the rectifier's behavior under different load conditions. By analyzing the output waveforms using MATLAB/Simulink, we can optimize the rectifier's performance and ensure efficient power conversion in industrial applications.
 
 \bibliographystyle{IEEEtran}
 \renewcommand{\bibname}{References}
