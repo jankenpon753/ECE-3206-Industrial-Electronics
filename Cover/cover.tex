@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/output/} }
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage{titling}
+\usepackage{float}
+\usepackage{amsmath}
+% \usepackage{minted}
+% \usepackage{multicol}
+% \usepackage{array}
+% \usepackage{setspace}
+% \usepackage{placeins}
+% \usepackage{hyperref}
+\setlength{\parindent}{0pt}
+\usepackage{adjustbox}
+\usepackage{ragged2e}
+
+% \usepackage{lipsum}
+
+\pagenumbering{gobble}
+\begin{document}
+\input{faysal_sir_cover}
+
+\pagebreak
+\begin{table}[H]
+    \centering
+    \begin{adjustbox}{max width=\textwidth}
+        \begin{tabular}{p{.7in} p{4.4in} p{.9in}}
+
+            \centering\textbf{Exp. No.} & \centering\textbf{Experiment Name}                                                          & \textbf{Exp. Date} \\
+                                        &                                                                                             &                    \\
+            \justifying 01              & \justifying Basics of Oscilloscope and Signal Generator                                     & Nov 24, 2024       \\
+                                        &                                                                                             &                    \\
+            \justifying 02              & \justifying Study of Diode Characteristics R, L, and Series Combination                     & Dec 09, 2024       \\
+                                        &                                                                                             &                    \\
+            \justifying 03              & \justifying Study of Thyristor Characteristics R, RL Load                                   & Jan 13, 2025       \\
+                                        &                                                                                             &                    \\
+            \justifying 04              & \justifying Study of 3-\(\Phi\) Star Rectifier using Diode \& Thyristor with R, RL Load     & Feb 10, 2025       \\
+                                        &                                                                                             &                    \\
+            \justifying 05              & \justifying Single Phase AC-AC Bidirectional (Full Wave) Voltage Controller with R, RL Load & Feb 24, 2025       \\
+        \end{tabular}
+    \end{adjustbox}
+\end{table}
+
+\end{document}
