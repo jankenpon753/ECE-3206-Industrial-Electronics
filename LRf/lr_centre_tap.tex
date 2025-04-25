@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[a4paper, total={6in, 9in}]{geometry}
+\usepackage{graphicx}
+\graphicspath{ {./images/output/} }
+\usepackage{caption}
+\usepackage[english]{babel}
+\usepackage{titling}
+\usepackage{float}
+% \usepackage{amsmath}
+% \usepackage{minted}
+% \usepackage{multicol}
+% \usepackage{array}
+% \usepackage{setspace}
+% \usepackage{placeins}
+
+% \usepackage{lipsum}
+
+\title{Single Phase Full Wave Rectifier Using Centre Tap Transformer \& Diode}
+\author{}
+\date{}
+
+\pagenumbering{gobble}
+\begin{document}
+
+\pagebreak
+\pagenumbering{arabic}
+\maketitle
+
+\section*{Objective}
+\addcontentsline{toc}{section}{Objective}
+\begin{itemize}
+    \item To construct a single-phase full-wave rectifier using a center-tap transformer and diodes.
+    \item To analyze the output waveforms for resistive and inductive loads.
+    \item To understand the working principle of a full-wave rectifier.
+\end{itemize}
+
+\section*{Circuit Diagrams}
+\addcontentsline{toc}{section}{Circuit Diagrams}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.5\textwidth]{centre_ckt.png}
+    \caption{Diode with Resistive Load \cite{rashid2013power}}
+    \label{fig:dc_r_load}
+\end{figure}
+
+\section*{Observations}
+\addcontentsline{toc}{section}{Observations}
+\begin{itemize}
+    \item Built a full-wave rectifier with a center-tap transformer and diodes.
+    \item Observed waveforms for R and RL loads on an oscilloscope.
+    \item Verified continuous conduction for both half-cycles.
+    \item Confirmed smoother DC output than a half-wave rectifier.
+\end{itemize}
+
+\subsubsection*{Outputs}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.7\textwidth]{full_r_load3.png}
+    \caption{Full wave rectifier output for R load 1}
+    \label{fig:rLoad}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=.7\textwidth]{full_r_load5.png}
+    \caption{Full wave rectifier output for R load 2}
+    \label{fig:rLoadDelay}
+\end{figure}
+
+\bibliographystyle{IEEEtran}
+\renewcommand{\bibname}{References}
+\addcontentsline{toc}{section}{References}
+\bibliography{ref}
+
+
+\end{document}
